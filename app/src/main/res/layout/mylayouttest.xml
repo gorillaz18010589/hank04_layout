@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+相對配置
+優先配置由上至下:1,3,2  上下各占一塊,剩下給中間
+<RelativeLayout
+android:paddingHorizontal="10dp"://整個容器的左右兩邊水平距離10dp
+xmlns:tools="http://schemas.android.com/tools" //讓這個頁面知道
+    tools:context=".MainActivity" //按鈕點下去跑來這頁面找
+
+<Button
+        android:id="@+id/guess": //設置id好讓其他人有對應位置
+        android:layout_alignParentRight="true":靠這爸爸容器的右邊
+        android:layout_marginLeft="12dp" //距離左邊容器的左邊:12dp
+        />
+
+<EditText
+        android:layout_toLeftOf="@id/guess" : //依靠guesss(誰的)左邊
+        android:layout_alignBottom="@id/guess"//對齊guress(誰的)下面
+        android:layout_alignTop="@id/guess" //對齊guress(誰的)上面
+        />
+         android:layout_alignParentBottom="true"://沿著爸爸的下面
+
+          <TextView
+        android:layout_above="@id/bottom" //在誰的上面
+        android:layout_below="@id/top"    //在誰的下面
+        android:layout_marginVertical="20dp" //距離別的容器上下20dp
+        android:inputType="number" //輸入型態只能是數字
+        android:singleLine="true" //只能單行輸入
+        />
+ >
+</RelativeLayout>
+-->
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingHorizontal="10dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity"
+
+    >
+
+    <!--上面板塊-->
+    <RelativeLayout
+        android:id="@+id/top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+    <Button
+        android:id="@+id/guess"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:text="Guess"
+        android:textSize="20sp"
+        android:layout_marginLeft="12dp"
+        android:onClick="doguess"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@id/guess"
+        android:layout_alignBottom="@id/guess"
+        android:layout_alignTop="@id/guess"
+        android:background="#f0f"
+        android:id="@+id/input"
+        />
+    </RelativeLayout>
+    <!--下面板塊-->
+    <LinearLayout
+        android:id="@+id/bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        >
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Guess"
+            />
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Seting"
+            />
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="QUIT"
+            />
+
+
+    </LinearLayout>
+    <!--中間板塊看上下快臉色所以寫在這-->
+    <TextView
+        android:id="@+id/log"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/bottom"
+        android:layout_below="@id/top"
+        android:background="#0f0"
+        android:layout_marginVertical="20dp"
+        android:inputType="number"
+        android:singleLine="true"
+        />
+
+</RelativeLayout>
