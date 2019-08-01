@@ -1,5 +1,9 @@
 package tw.org.iii.appps.hank04_layout;
 //super盡量要留下來,但她不一定是要第一行
+// String inputString =  input.getText().toString(); //抓到你輸入的文字,轉文字串
+// log.setText(inputString); 一開始只有單行訊息,改用append方可以做出log訊息
+//  log.append(inputString + "\n"); //在log訊息區,加上你心輸入的文字換行等同於Strinbuffer
+//  input.setText(""); //輸入後input清空文字
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,6 +16,7 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
     EditText input ;
     TextView log;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,7 +31,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void doguess(View view){
         String inputString =  input.getText().toString(); //抓到你輸入的文字,轉文字串
-        log.setText(inputString);
+        //        log.setText(inputString); 一開始只有單行訊息,改用append方可以做出log訊息
+        log.append(inputString + "\n"); //在log訊息區,加上你心輸入的文字換行等同於Strinbuffer
+        input.setText(""); //輸入後input清空文字
+
+
 
         Log.v("brad","inputString");
 

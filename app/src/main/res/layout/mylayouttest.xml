@@ -27,6 +27,9 @@ xmlns:tools="http://schemas.android.com/tools" //讓這個頁面知道
         android:inputType="number" //輸入型態只能是數字
         android:singleLine="true" //只能單行輸入
         />
+
+         <ScrollView> ://讓版面拖曳
+
  >
 </RelativeLayout>
 -->
@@ -96,16 +99,23 @@ xmlns:tools="http://schemas.android.com/tools" //讓這個頁面知道
 
     </LinearLayout>
     <!--中間板塊看上下快臉色所以寫在這-->
-    <TextView
-        android:id="@+id/log"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@id/bottom"
         android:layout_below="@id/top"
-        android:background="#0f0"
-        android:layout_marginVertical="20dp"
-        android:inputType="number"
-        android:singleLine="true"
-        />
+        >
+        <TextView
+            android:id="@+id/log"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#0f0"
+            android:layout_marginVertical="20dp"
+            android:inputType="number"
+            android:singleLine="true"
+            />
+
+    </ScrollView>
+
 
 </RelativeLayout>
